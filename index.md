@@ -3,15 +3,6 @@ layout: lesson
 root: .
 ---
 
-Wolfman and Dracula have been hired by Universal Missions (a space
-services spinoff from Euphoric State University) to investigate if it
-is possible to send their next planetary lander to Mars.  They want to
-be able to work on the plans at the same time, but they have run into
-problems doing this in the past.  If they take turns, each one will
-spend a lot of time waiting for the other to finish, but if they work
-on their own copies and email changes back and forth things will be
-lost, overwritten, or duplicated.
-
 You and a labmate are going to work on a project together.
 You want to keep track of the changes you both made to shared files and share your changes.
 Emailing back and forth means that only one of you could work on it at a time and a shared dropbox or google drive wouldn't tell keep track of the versions well or tell you what has changed between versions.

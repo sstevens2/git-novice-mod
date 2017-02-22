@@ -12,6 +12,11 @@ spend a lot of time waiting for the other to finish, but if they work
 on their own copies and email changes back and forth things will be
 lost, overwritten, or duplicated.
 
+You and a labmate are going to work on a project together.
+You want to keep track of the changes you both made to shared files and share your changes.
+Emailing back and forth means that only one of you could work on it at a time and a shared dropbox or google drive wouldn't tell keep track of the versions well or tell you what has changed between versions.
+
+
 A colleague suggests using [version control]({{ page.root }}/reference/#version-control) to
 manage their work. Version control is better than mailing files back and forth:
 

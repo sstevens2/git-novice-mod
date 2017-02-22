@@ -12,8 +12,9 @@ keypoints:
 
 Once Git is configured,
 we can start using it.
-Let's create a directory for our work and then move into that directory:
-**Be sure to use your own initials in the directory name. This will make working with your partner more obvious later.**
+Let's create a directory for our work and then move into that directory.  
+We will name the directory for our git collaboration and then with **our initials**.
+The initials at the end will help us keep straight our repository from our partner's repository:
 
 ~~~
 $ mkdir gitcollab_sls

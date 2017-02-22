@@ -13,14 +13,15 @@ keypoints:
 Once Git is configured,
 we can start using it.
 Let's create a directory for our work and then move into that directory:
+**Be sure to use your own initials in the directory name. This will make working with your partner more obvious later.**
 
 ~~~
-$ mkdir planets
-$ cd planets
+$ mkdir gitcollab_sls
+$ cd gitcollab_sls
 ~~~
 {: .bash}
 
-Then we tell Git to make `planets` a [repository]({{ page.root }}/reference/#repository)—a place where
+Then we tell Git to make `gitcollab_sls` a [repository]({{ page.root }}/reference/#repository)—a place where
 Git can store versions of our files:
 
 ~~~
@@ -37,7 +38,7 @@ $ ls
 {: .bash}
 
 But if we add the `-a` flag to show everything,
-we can see that Git has created a hidden directory within `planets` called `.git`:
+we can see that Git has created a hidden directory within `gitcollab_sls` called `.git`:
 
 ~~~
 $ ls -a
@@ -93,7 +94,7 @@ nothing to commit (create/copy files and use "git add" to track)
 > > ## Solution
 > >
 > > Git repositories can interfere with each other if they are "nested" in the
-> > directory of another: the outer repository will try to version-control 
+> > directory of another: the outer repository will try to version-control
 > > the inner repository. Therefore, it's best to create each new Git
 > > repository in a separate directory. To be sure that there is no conflicting
 > > repository in the directory, check the output of `git status`. If it looks

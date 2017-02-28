@@ -56,7 +56,7 @@ $ cat .gitignore
 {: .bash}
 
 ~~~
-*.dat
+*.fasta
 results/
 ~~~
 {: .output}

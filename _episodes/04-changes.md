@@ -17,25 +17,26 @@ keypoints:
 - "Always write a log message when committing changes."
 ---
 
-Let's create a file called `mars.txt` that contains some notes
-about the Red Planet's suitability as a base.
+Let's create a file called `countATCG.py` or `countATCG.R` (if you wish) to count the
+occurrences of the pattern ATCG in a fasta sequence file.
+We won't really be coding for this git exercise but rather making notes with our plan.
 (We'll use `nano` to edit the file;
 you can use whatever editor you like.
 In particular, this does not have to be the `core.editor` you set globally earlier.)
 
 ~~~
-$ nano mars.txt
+$ nano countATCG.py
 ~~~
 {: .bash}
 
-Type the text below into the `mars.txt` file:
+Type the text below into the `countATCG.py` file:
 
 ~~~
-Cold and dry, but everything is my favorite color
+# Load the fasta file into script
 ~~~
 {: .output}
 
-`mars.txt` now contains a single line, which we can see by running:
+`countATCG.py` now contains a single line, which we can see by running:
 
 ~~~
 $ ls
@@ -43,17 +44,17 @@ $ ls
 {: .bash}
 
 ~~~
-mars.txt
+countATCG.py
 ~~~
 {: .output}
 
 ~~~
-$ cat mars.txt
+$ cat countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+# Load the fasta file into script
 ~~~
 {: .output}
 
@@ -73,7 +74,7 @@ Initial commit
 Untracked files:
    (use "git add <file>..." to include in what will be committed)
 
-	mars.txt
+	countATCG.py
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 {: .output}
@@ -83,7 +84,7 @@ that Git isn't keeping track of.
 We can tell Git to track a file using `git add`:
 
 ~~~
-$ git add mars.txt
+$ git add countATCG.py
 ~~~
 {: .bash}
 
@@ -102,25 +103,25 @@ Initial commit
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   mars.txt
+	new file:   countATCG.py
 
 ~~~
 {: .output}
 
-Git now knows that it's supposed to keep track of `mars.txt`,
+Git now knows that it's supposed to keep track of `countATCG.py`,
 but it hasn't recorded these changes as a commit yet.
 To get it to do that,
 we need to run one more command:
 
 ~~~
-$ git commit -m "Start notes on Mars as a base"
+$ git commit -m "Started to outline script"
 ~~~
 {: .bash}
 
 ~~~
 [master (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
- create mode 100644 mars.txt
+ create mode 100644 countATCG.py
 ~~~
 {: .output}
 
@@ -165,10 +166,10 @@ $ git log
 
 ~~~
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: FirstName LastName <email@addre.ss>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Started to outline script
 ~~~
 {: .output}
 
@@ -183,26 +184,26 @@ and the log message Git was given when the commit was created.
 
 > ## Where Are My Changes?
 >
-> If we run `ls` at this point, we will still see just one file called `mars.txt`.
+> If we run `ls` at this point, we will still see just one file called `countATCG.py`.
 > That's because Git saves information about files' history
 > in the special `.git` directory mentioned earlier
 > so that our filesystem doesn't become cluttered
 > (and so that we can't accidentally edit or delete an old version).
 {: .callout}
 
-Now suppose Dracula adds more information to the file.
+Now let's add more information to the script.
 (Again, we'll edit with `nano` and then `cat` the file to show its contents;
 you may use a different editor, and don't need to `cat`.)
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano countATCG.py
+$ cat countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
+# Load the fasta file into script
+# Function to remove headers from file
 ~~~
 {: .output}
 
@@ -220,7 +221,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   countATCG.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -243,13 +244,13 @@ $ git diff
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/countATCG.py b/countATCG.py
 index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/countATCG.py
++++ b/countATCG.py
 @@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
+ # Load the fasta file into script
++# Function to remove headers from file
 ~~~
 {: .output}
 
@@ -272,7 +273,7 @@ If we break it down into pieces:
 After reviewing our change, it's time to commit it:
 
 ~~~
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git commit -m "Added function to remove headers"
 $ git status
 ~~~
 {: .bash}
@@ -283,7 +284,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   countATCG.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -294,13 +295,13 @@ Git won't commit because we didn't use `git add` first.
 Let's fix that:
 
 ~~~
-$ git add mars.txt
-$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
+$ git add  countATCG.py
+$ git commit -m "Added function to remove headers"
 ~~~
 {: .bash}
 
 ~~~
-[master 34961b1] Add concerns about effects of Mars' moons on Wolfman
+[master 34961b1] Added function to remove headers
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -352,15 +353,15 @@ First,
 we'll add another line to the file:
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano countATCG.py
+$ cat countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Load the fasta file into script
+# Function to remove headers from file
+# Function to count the number of ATCGs in sequence
 ~~~
 {: .output}
 
@@ -370,14 +371,14 @@ $ git diff
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/countATCG.py b/countATCG.py
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/countATCG.py
++++ b/countATCG.py
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ # Load the fasta file into script
+ # Function to remove headers from file
++# Function to count the number of ATCGs in sequence
 ~~~
 {: .output}
 
@@ -388,7 +389,7 @@ Now let's put that change in the staging area
 and see what `git diff` reports:
 
 ~~~
-$ git add mars.txt
+$ git add countATCG.py
 $ git diff
 ~~~
 {: .bash}
@@ -406,14 +407,14 @@ $ git diff --staged
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/countATCG.py b/countATCG.py
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/countATCG.py
++++ b/countATCG.py
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ # Load the fasta file into script
+ # Function to remove headers from file
++# Function to count the number of ATCGs in sequence
 ~~~
 {: .output}
 
@@ -423,12 +424,12 @@ and what's in the staging area.
 Let's save our changes:
 
 ~~~
-$ git commit -m "Discuss concerns about Mars' climate for Mummy"
+$ git commit -m "Added function to count ATCGs"
 ~~~
 {: .bash}
 
 ~~~
-[master 005937f] Discuss concerns about Mars' climate for Mummy
+[master 005937f] Added function to count ATCGs
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
@@ -455,22 +456,22 @@ $ git log
 
 ~~~
 commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: FirstName LastName <email@addre.ss>
 Date:   Thu Aug 22 10:14:07 2013 -0400
 
-    Discuss concerns about Mars' climate for Mummy
+    Added function to count ATCGs
 
 commit 34961b159c27df3b475cfe4415d94a6d1fcd064d
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: FirstName LastName <email@addre.ss>
 Date:   Thu Aug 22 10:07:21 2013 -0400
 
-    Add concerns about effects of Mars' moons on Wolfman
+    Added function to remove headers
 
 commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
-Author: Vlad Dracula <vlad@tran.sylvan.ia>
+Author: FirstName LastName <email@addre.ss>
 Date:   Thu Aug 22 09:51:46 2013 -0400
 
-    Start notes on Mars as a base
+    Started to outline script
 ~~~
 {: .output}
 
@@ -501,10 +502,10 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > 
 > ~~~
 > commit 005937fbe2a98fb83f0ade869025dc2636b4dad5
-> Author: Vlad Dracula <vlad@tran.sylvan.ia>
+> Author: FirstName LastName <email@addre.ss>
 > Date:   Thu Aug 22 10:14:07 2013 -0400
 >
->    Discuss concerns about Mars' climate for Mummy
+>    Added function to count ATCGs
 > ~~~
 > {: .output}
 >
@@ -516,9 +517,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .bash}
 > ~~~
-> * 005937f Discuss concerns about Mars' climate for Mummy
-> * 34961b1 Add concerns about effects of Mars' moons on Wolfman
-> * f22b25e Start notes on Mars as a base
+> * 005937f Added function to count ATCGs
+> * 34961b1 Added function to remove headers
+> * f22b25e Started to outline script
 > ~~~
 > {: .output}
 >
@@ -530,9 +531,9 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 > ~~~
 > {: .bash}
 > ~~~
-> * 005937f Discuss concerns about Mars' climate for Mummy (HEAD, master)
-> * 34961b1 Add concerns about effects of Mars' moons on Wolfman
-> * f22b25e Start notes on Mars as a base
+> * 005937f Added function to count ATCGs (HEAD, master)
+> * 34961b1 Added function to remove headers
+> * f22b25e Started to outline script
 > ~~~
 > {: .output}
 {: .callout}
@@ -579,11 +580,11 @@ repository (`git commit`):
 > ## Choosing a Commit Message
 >
 > Which of the following commit messages would be most appropriate for the
-> last commit made to `mars.txt`?
+> last commit made to `countATCG.py`?
 >
 > 1. "Changes"
-> 2. "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
-> 3. "Discuss effects of Mars' climate on the Mummy"
+> 2. "Added line '# Function to count the number of ATCGs in sequence' to countATCG.py"
+> 3. "Added function to count number of ATCGs"
 >
 > > ## Solution
 > > Answer 1 is not descriptive enough,
@@ -621,19 +622,18 @@ repository (`git commit`):
 > The staging area can hold changes from any number of files
 > that you want to commit as a single snapshot.
 >
-> 1. Add some text to `mars.txt` noting your decision
-> to consider Venus as a base
-> 2. Create a new file `venus.txt` with your initial thoughts
-> about Venus as a base for you and your friends
+> 1. Add a comment to `countATCG.py` indicating the program
+> writes the results to a file
+> 2. Create a new file `Readme.md` with your name and affiliation.
 > 3. Add changes from both files to the staging area,
 > and commit those changes.
 >
 > > ## Solution
 > >
-> > First we make our changes to the `mars.txt` and `venus.txt` files:
+> > First we make our changes to the ` countATCG.py` and `Readme.md` files:
 > > ~~~
-> > $ nano mars.txt
-> > $ cat mars.txt
+> > $ nano countATCG.py
+> > $ cat countATCG.py
 > > ~~~
 > > {: .bash}
 > > ~~~
@@ -641,89 +641,36 @@ repository (`git commit`):
 > > ~~~
 > > {: .output}
 > > ~~~
-> > $ nano venus.txt
-> > $ cat venus.txt
+> > $ nano Readme.md
+> > $ cat Readme.md
 > > ~~~
 > > {: .bash}
 > > ~~~
-> > Venus is a nice planet and I definitely should consider it as a base.
+> > Author: FirstName LastName, University of Wisconsin - Madison
 > > ~~~
 > > {: .output}
 > > Now you can add both files to the staging area. We can do that in one line:
 > >
 > > ~~~
-> > $ git add mars.txt venus.txt
+> > $ git add countATCG.py Readme.md
 > > ~~~
 > > {: .bash}
 > > Or with multiple commands:
 > > ~~~
-> > $ git add mars.txt
-> > $ git add venus.txt
+> > $ git add countATCG.py
+> > $ git add Readme.md
 > > ~~~
 > > {: .bash}
 > > Now the files are ready to commit. You can check that using `git status`. If you are ready to commit use:
 > > ~~~
-> > $ git commit -m "Wrote down my plans to start a base on Venus"
+> > $ git commit -m "Added line to write output and started Readme"
 > > ~~~
 > > {: .bash}
 > > ~~~
 > > [master cc127c2]
-> >  Wrote down my plans to start a base on venus
+> >  Added line to write output and started Readme
 > >  2 files changed, 2 insertions(+)
-> >  create mode 100644 venus.txt
-> > ~~~
-> > {: .output}
-> {: .solution}
-{: .challenge}
-
-> ## Author and Committer
->
-> For each of the commits you have done, Git stored your name twice.
-> You are named as the author and as the committer. You can observe
-> that by telling Git to show you more information about your last
-> commits:
->
-> ~~~
-> $ git log --format=full
-> ~~~
-> {: .bash}
->
-> When commiting you can name someone else as the author:
->
-> ~~~
-> $ git commit --author="Vlad Dracula <vlad@tran.sylvan.ia>"
-> ~~~
-> {: .bash}
->
-> Create a new repository and create two commits: one without the
-> `--author` option and one by naming a colleague of yours as the
-> author. Run `git log` and `git log --format=full`. Think about ways
-> how that can allow you to collaborate with your colleagues.
->
-> > ## Solution
-> >
-> > ~~~
-> > $ git add me.txt
-> > $ git commit -m "Updated Vlad's bio." --author="Frank N. Stein <franky@monster.com>"
-> > ~~~
-> > {: .bash}
-> > ~~~
-> > [master 4162a51] Updated Vlad's bio.
-> > Author: Frank N. Stein <franky@monster.com>
-> > 1 file changed, 2 insertions(+), 2 deletions(-)
-> >
-> > $ git log --format=full
-> > commit 4162a51b273ba799a9d395dd70c45d96dba4e2ff
-> > Author: Frank N. Stein <franky@monster.com>
-> > Commit: Vlad Dracula <vlad@tran.sylvan.ia>
-> >
-> > Updated Vlad's bio.
-> >
-> > commit aaa3271e5e26f75f11892718e83a3e2743fab8ea
-> > Author: Vlad Dracula <vlad@tran.sylvan.ia>
-> > Commit: Vlad Dracula <vlad@tran.sylvan.ia>
-> >
-> > Vlad's initial bio.
+> >  create mode 100644 Readme.md
 > > ~~~
 > > {: .output}
 > {: .solution}

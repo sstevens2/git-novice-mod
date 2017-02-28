@@ -31,7 +31,7 @@ create a new repository called `gitcollab_sls` (note the pictures will show 'pla
 
 ![Creating a Repository on GitHub (Step 1)](../fig/github-create-repo-01.png)
 
-Name your repository "planets" and then click "Create Repository":
+Name your repository "gitcollab_sls" and then click "Create Repository":
 
 ![Creating a Repository on GitHub (Step 2)](../fig/github-create-repo-02.png)
 
@@ -118,7 +118,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets
+To https://github.com/vlad/gitcollab_sls
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ~~~
@@ -190,7 +190,7 @@ $ git pull origin master
 {: .bash}
 
 ~~~
-From https://github.com/vlad/planets
+From https://github.com/vlad/gitcollab_sls
  * branch            master     -> FETCH_HEAD
 Already up-to-date.
 ~~~
@@ -202,7 +202,7 @@ GitHub, though, this command would download them to our local repository.
 
 > ## GitHub GUI
 >
-> Browse to your `planets` repository on GitHub.
+> Browse to your `gitcollab_sls` repository on GitHub.
 > Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
 > Hover over, and click on, the three buttons to the right of each commit.
 > What information can you gather/explore from these buttons?

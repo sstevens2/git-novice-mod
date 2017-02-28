@@ -27,7 +27,7 @@ and cons of this in the final section of this lesson.
 
 Let's start by sharing the changes we've made to our current project with the
 world.  Log in to GitHub, then click on the icon in the top right corner to
-create a new repository called `planets`:
+create a new repository called `gitcollab_sls` (note the pictures will show 'planets' instead):
 
 ![Creating a Repository on GitHub (Step 1)](../fig/github-create-repo-01.png)
 
@@ -43,13 +43,13 @@ information on how to configure your local repository:
 This effectively does the following on GitHub's servers:
 
 ~~~
-$ mkdir planets
-$ cd planets
+$ mkdir gitcollab_sls
+$ cd gitcollab_sls
 $ git init
 ~~~
 {: .bash}
 
-Our local repository still contains our earlier work on `mars.txt`, but the
+Our local repository still contains our earlier work on `countATCG.py`, but the
 remote repository on GitHub doesn't contain any files yet:
 
 ![Freshly-Made GitHub Repository](../fig/git-freshly-made-github-repo.svg)
@@ -77,11 +77,11 @@ SSH to HTTPS.
 
 ![Changing the Repository URL on GitHub](../fig/github-change-repo-string.png)
 
-Copy that URL from the browser, go into the local `planets` repository, and run
+Copy that URL from the browser, go into the local `gitcollab_sls` repository, and run
 this command:
 
 ~~~
-$ git remote add origin https://github.com/vlad/planets.git
+$ git remote add origin https://github.com/vlad/gitcollab_sls.git
 ~~~
 {: .bash}
 
@@ -96,8 +96,8 @@ $ git remote -v
 {: .bash}
 
 ~~~
-origin   https://github.com/vlad/planets.git (push)
-origin   https://github.com/vlad/planets.git (fetch)
+origin   https://github.com/vlad/gitcollab_sls.git (push)
+origin   https://github.com/vlad/gitcollab_sls.git (fetch)
 ~~~
 {: .output}
 

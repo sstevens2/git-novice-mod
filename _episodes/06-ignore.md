@@ -18,7 +18,7 @@ Let's create a few dummy files:
 
 ~~~
 $ mkdir results
-$ touch a.dat b.dat c.dat results/a.out results/b.out
+$ touch ecoli.fasta bsubtilis.fasta saccharomyces.fasta results/ecoli.out results/bsubtilis.out
 ~~~
 {: .bash}
 
@@ -34,9 +34,9 @@ On branch master
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	a.dat
-	b.dat
-	c.dat
+	ecoli.fasta
+	bsubtilis.fasta
+	saccharomyces.fasta
 	results/
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
@@ -106,20 +106,20 @@ nothing to commit, working directory clean
 As a bonus, using `.gitignore` helps us avoid accidentally adding to the repository files that we don't want to track:
 
 ~~~
-$ git add a.dat
+$ git add ecoli.fasta
 ~~~
 {: .bash}
 
 ~~~
 The following paths are ignored by one of your .gitignore files:
-a.dat
+ecoli.fasta
 Use -f if you really want to add them.
 ~~~
 {: .output}
 
 If we really want to override our ignore settings,
 we can use `git add -f` to force Git to add something. For example,
-`git add -f a.dat`.
+`git add -f ecoli.fasta`.
 We can also always see the status of ignored files if we want:
 
 ~~~
@@ -132,9 +132,9 @@ On branch master
 Ignored files:
  (use "git add -f <file>..." to include in what will be committed)
 
-        a.dat
-        b.dat
-        c.dat
+        ecoli.fasta
+        bsubtilis.fasta
+        saccharomyces.fasta
         results/
 
 nothing to commit, working directory clean
@@ -196,9 +196,9 @@ nothing to commit, working directory clean
 > Given a directory structure that looks like:
 >
 > ~~~
-> results/data/position/gps/a.data
-> results/data/position/gps/b.data
-> results/data/position/gps/c.data
+> results/data/position/gps/ecoli.fastaa
+> results/data/position/gps/bsubtilis.fastaa
+> results/data/position/gps/saccharomyces.fastaa
 > results/data/position/gps/info.txt
 > results/plots
 > ~~~

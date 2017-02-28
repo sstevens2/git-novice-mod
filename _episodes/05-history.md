@@ -20,41 +20,41 @@ As we saw in the previous lesson, we can refer to commits by their
 identifiers.  You can refer to the _most recent commit_ of the working
 directory by using the identifier `HEAD`.
 
-We've been adding one line at a time to `mars.txt`, so it's easy to track our
+We've been adding one line at a time to `countATCG.py`, so it's easy to track our
 progress by looking, so let's do that using our `HEAD`s.  Before we start,
-let's make a change to `mars.txt`.
+let's make a change to `countATCG.py`.
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano countATCG.py
+$ cat countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
-An ill-considered change
+# Load the fasta file into script
+# Function to remove headers from file
+# Function to count the number of ATCGs in sequence
+# Bug in code
 ~~~
 {: .output}
 
 Now, let's see what we get.
 
 ~~~
-$ git diff HEAD mars.txt
+$ git diff HEAD countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/countATCG.py b/countATCG.py
 index b36abfd..0848c8d 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/countATCG.py
++++ b/countATCG.py
 @@ -1,3 +1,4 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
- But the Mummy will appreciate the lack of humidity
-+An ill-considered change.
+ # Load the fasta file into script
+ # Function to remove headers from file
+ # Function to count the number of ATCGs in sequence
++# Bug in code
 ~~~
 {: .output}
 
@@ -63,7 +63,7 @@ real goodness in all this is when you can refer to previous commits.  We do
 that by adding `~1` to refer to the commit one before `HEAD`.
 
 ~~~
-$ git diff HEAD~1 mars.txt
+$ git diff HEAD~1 countATCG.py
 ~~~
 {: .bash}
 
@@ -72,36 +72,36 @@ again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to old
 commits:
 
 ~~~
-$ git diff HEAD~1 mars.txt
+$ git diff HEAD~1 countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/countATCG.py b/countATCG.py
 index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/countATCG.py
++++ b/countATCG.py
 @@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ # Load the fasta file into script
+ # Function to remove headers from file
++# Function to count the number of ATCGs in sequence
 ~~~
 {: .output}
 
 ~~~
-$ git diff HEAD~2 mars.txt
+$ git diff HEAD~2 countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/countATCG.py b/countATCG.py
 index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/countATCG.py
++++ b/countATCG.py
 @@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ # Load the fasta file into script
++# Function to remove headers from file
++# Function to count the number of ATCGs in sequence
 ~~~
 {: .output}
 
@@ -125,19 +125,19 @@ f22b25e3233b4645dabd0d81e651fe074bd8e73b,
 so let's try this:
 
 ~~~
-$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt
+$ git diff f22b25e3233b4645dabd0d81e651fe074bd8e73b countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/countATCG.py b/countATCG.py
 index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/countATCG.py
++++ b/countATCG.py
 @@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ # Load the fasta file into script
++# Function to remove headers from file
++# Function to count the number of ATCGs in sequence
 ~~~
 {: .output}
 
@@ -146,19 +146,19 @@ but typing out random 40-character strings is annoying,
 so Git lets us use just the first few characters:
 
 ~~~
-$ git diff f22b25e mars.txt
+$ git diff f22b25e countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-diff --git a/mars.txt b/mars.txt
+diff --git a/countATCG.py b/countATCG.py
 index df0654a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
+--- a/countATCG.py
++++ b/countATCG.py
 @@ -1 +1,3 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
+ # Load the fasta file into script
++# Function to remove headers from file
++# Function to count the number of ATCGs in sequence
 ~~~
 {: .output}
 
@@ -168,8 +168,8 @@ can we restore older versions of things?
 Let's suppose we accidentally overwrite our file:
 
 ~~~
-$ nano mars.txt
-$ cat mars.txt
+$ nano countATCG.py
+$ cat countATCG.py
 ~~~
 {: .bash}
 
@@ -192,7 +192,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   mars.txt
+	modified:   countATCG.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -202,15 +202,15 @@ We can put things back the way they were
 by using `git checkout`:
 
 ~~~
-$ git checkout HEAD mars.txt
-$ cat mars.txt
+$ git checkout HEAD countATCG.py
+$ cat countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
-The two moons may be a problem for Wolfman
-But the Mummy will appreciate the lack of humidity
+# Load the fasta file into script
+# Function to remove headers from file
+# Function to count the number of ATCGs in sequence
 ~~~
 {: .output}
 
@@ -223,17 +223,17 @@ If we want to go back even further,
 we can use a commit identifier instead:
 
 ~~~
-$ git checkout f22b25e mars.txt
+$ git checkout f22b25e countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-$ cat mars.txt
+$ cat countATCG.py
 ~~~
 {: .bash}
 
 ~~~
-Cold and dry, but everything is my favorite color
+# Load the fasta file into script
 ~~~
 {: .output}
 
@@ -250,7 +250,7 @@ Changes to be committed:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
-#	modified:   mars.txt
+#	modified:   countATCG.py
 #
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
@@ -261,7 +261,7 @@ Again, we can put things back the way they were with
 by using `git checkout`:
 
 ~~~
-$ git checkout -f master mars.txt
+$ git checkout -f master countATCG.py
 ~~~
 {: .bash}
 
@@ -270,12 +270,12 @@ $ git checkout -f master mars.txt
 > Above we used
 >
 > ~~~
-> $ git checkout f22b25e mars.txt
+> $ git checkout f22b25e countATCG.py
 > ~~~
 > {: .bash}
 >
-> to revert `mars.txt` to its state after the commit `f22b25e`.
-> If you forget `mars.txt` in that command, Git will tell you that "You are in
+> to revert `countATCG.py` to its state after the commit `f22b25e`.
+> If you forget `countATCG.py` in that command, Git will tell you that "You are in
 > 'detached HEAD' state." In this state, you shouldn't make any changes.
 > You can fix this by reattaching your head using ``git checkout master``
 {: .callout}
@@ -371,7 +371,7 @@ moving backward and forward in time becomes much easier.
 > What is the output of cat venus.txt at the end of this set of commands?
 >
 > ~~~
-> $ cd planets
+> $ cd planets # planets is an already initialized repository
 > $ nano venus.txt #input the following text: Venus is beautiful and full of love
 > $ git add venus.txt
 > $ nano venus.txt #add the following text: Venus is too hot to be suitable as a base
@@ -460,10 +460,10 @@ moving backward and forward in time becomes much easier.
 
 > ## Checking Understanding of `git diff`
 >
-> Consider this command: `git diff HEAD~3 mars.txt`. What do you predict this command
+> Consider this command: `git diff HEAD~3 countATCG.py`. What do you predict this command
 > will do if you execute it? What happens when you do execute it? Why?
 >
-> Try another command, `git diff [ID] mars.txt`, where [ID] is replaced with
+> Try another command, `git diff [ID] countATCG.py`, where [ID] is replaced with
 > the unique identifier for your most recent commit. What do you think will happen,
 > and what does happen?
 {: .challenge}
@@ -472,7 +472,7 @@ moving backward and forward in time becomes much easier.
 >
 > `git checkout` can be used to restore a previous commit when unstaged changes have
 > been made, but will it also work for changes that have been staged but not committed?
-> Make a change to `mars.txt`, add that change, and use `git checkout` to see if
+> Make a change to `countATCG.py`, add that change, and use `git checkout` to see if
 > you can remove your change.
 {: .challenge}
 
@@ -482,15 +482,15 @@ moving backward and forward in time becomes much easier.
 > the right commit ID, especially if the commit is from several months ago.
 >
 > Imaging the `planets` project has more than 50 files.
-> You would like to find a commit with specific text in `mars.txt` is modified.
+> You would like to find a commit with specific text in `countATCG.py` is modified.
 > When you type `git log`, a very long list appeared,
 > How can you narrow down the search?
 >
 > Recorded that the `git diff` command allow us to explore one specific file,
-> e.g. `git diff mars.txt`. We can apply the similar idea here.
+> e.g. `git diff countATCG.py`. We can apply the similar idea here.
 >
 > ~~~
-> $ git log mars.txt
+> $ git log countATCG.py
 > ~~~
 > {: .bash}
 >
@@ -501,7 +501,7 @@ moving backward and forward in time becomes much easier.
 > Is that possible to combine both? Let's try the following:
 >
 > ~~~
-> $ git log --patch mars.txt
+> $ git log --patch countATCG.py
 > ~~~
 > {: .bash}
 >

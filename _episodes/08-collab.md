@@ -39,7 +39,14 @@ Next, the Collaborator needs to download a copy of the Owner's repository to her
 her `Desktop` folder, the Collaborator enters:
 
 ~~~
-$ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
+$ git clone https://github.com/vlad/gitcollab_sls.git 
+~~~
+{: .bash}
+
+or if you'd like to rename it you can add additional argument
+
+~~~
+$ git clone https://github.com/vlad/gitcollab_sls.git ~/Desktop/sarah-gitcollab
 ~~~
 {: .bash}
 
@@ -51,26 +58,26 @@ The Collaborator can now make a change in her clone of the Owner's repository,
 exactly the same way as we've been doing before:
 
 ~~~
-$ cd ~/Desktop/vlad-planets
-$ nano pluto.txt
-$ cat pluto.txt
+$ cd ~/Desktop/gitcollab_sls
+$ nano Readme.md
+$ cat Readme.md
 ~~~
 {: .bash}
 
 ~~~
-It is so a planet!
+Authors: FirstName LastName and FirstName2 LastName2
 ~~~
 {: .output}
 
 ~~~
-$ git add pluto.txt
-$ git commit -m "Some notes about Pluto"
+$ git add Readme.md
+$ git commit -m "Started Readme for repo"
 ~~~
 {: .bash}
 
 ~~~
  1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ create mode 100644 Readme.md
 ~~~
 {: .output}
 
@@ -87,7 +94,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To https://github.com/vlad/planets.git
+To https://github.com/vlad/gitcollab_sls.git
    9272da5..29aba7c  master -> master
 ~~~
 {: .output}
@@ -112,13 +119,13 @@ remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
 Unpacking objects: 100% (3/3), done.
-From https://github.com/vlad/planets
+From https://github.com/vlad/gitcollab_sls
  * branch            master     -> FETCH_HEAD
 Updating 9272da5..29aba7c
 Fast-forward
- pluto.txt | 1 +
+ Readme.md | 1 +
  1 file changed, 1 insertion(+)
- create mode 100644 pluto.txt
+ create mode 100644 Readme.md
 ~~~
 {: .output}
 

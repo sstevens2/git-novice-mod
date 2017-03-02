@@ -1,7 +1,7 @@
 ---
 title: Branching and Pull Requests
-teaching: 10
-exercises: 0
+teaching: 60
+exercises: 1
 questions:
 - "What is branching for?"
 - "What are pull requests for?"
@@ -10,8 +10,8 @@ objectives:
 - "Understand how to make a branch and what they are useful for"
 - "Understand how to make a pull request and what they are useful for"
 keypoints:
-- "COME BACK"
-- "COME BACK"
+- "Pull requests suggest changes to repos where you don't have privileges"
+- "Branches can help you to suggest not connected changes or develop changes outside of the main repo."
 ---
 
 
@@ -238,7 +238,7 @@ Switched to branch 'addItaly'
 ~~~
 {: .output}
 
-> ## Add Italy file and sync it to github
+> ## Add new country file and make PR
 >
 > - Copy your first country file into a new country
 > - Edit the file to include info on the new country

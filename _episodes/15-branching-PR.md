@@ -24,21 +24,18 @@ For this lesson we will be working on the `countries` repository together.
 Open the github link for the `countries` repo
 at [https://github.com/McMahonLab/countries](https://github.com/McMahonLab/countries).
 
-INSERT IMAGE OF ORIG REPO!
+![](../fig/github_screenshot_upstream_repo.png)
 
 Then click the fork button in the upper right hand conner.  
 
 Next we are going to setup the connections to both our forked version and the authoritative version we forked it from.
 
-IMAGE OF FORKING
+![](../fig/github_screenshot_upstream_forking.png)
 
 First we will clone the repo from our forked version so that our version is setup as the 'origin' connection.
-
-IMAGE OF FORKED REPO
-
 Copy the web address for your forked repo (from the web address line or click 'clone and download' and copy that).
 
-IMAGE OF CLONE AND DOWNLOAD BUTTON
+![](../fig/github_screenshot_cloneOrigin.png)
 
 Open your terminal and navigate to a folder you'd like to hold this repo, maybe your `Desktop`.
 Once there you can clone the repo using the link we just copied.
@@ -62,11 +59,9 @@ Next we will set up a connection or remote to the authoritative repository.
 In your browser, you can get back to this repo by clicking on the link in the upper left hand corner,
 under your username and repo.
 
-IMAGE OF REPO WITH ARROW TO LINK
-
 Copy the web address for this repo (from the web address line or click the 'clone and download' and copy that).
 
-IMAGE OF THE REPO CLONE AND DOWNLOAD CLICK
+![](../fig/github_screenshot_upstream_repo.png)
 
 Then back in your terminal, navigate in the cloned repo and add the remote connection.
 For this command we must give the new connection a different nickname, where our original connection is 'origin'
@@ -167,14 +162,16 @@ To https://github.com/USERNAME/countries.git
 Next go to your forked github version of the repo and reload the page.
 You should see the changes in your version of the repo.
 
-IMAGE OF UPDATED REPO
+![](../fig/github_screenshot_origin_wFrance.png)
 
 Then click the 'New pull request' button.
 
-IMAGE OF THE PULL REQUEST
+![](../fig/github_screenshot_makingPR1.png)
 
 The base fork should be the upstream version and then the head fork should be your version.
 Then click the 'create pull request button'.
+
+![](../fig/github_screenshot_makingPR2.png)
 
 Now someone with privileges to the upstream repo can review it, give comments and
 suggestions, and merge it into the upstream version.
@@ -206,7 +203,7 @@ $ git push origin master
 
 Now if we reload the pull request.  The new commit was added to that pull request.
 
-IMAGE OF PULL REQUEST WITH NEW COMMIT
+![](../figgithub_screenshot_after_new_commit.png)
 
 This is great for our purposes but you can imagine you may want to suggest changes that
 aren't linked to one another.
